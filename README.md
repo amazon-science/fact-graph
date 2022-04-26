@@ -4,8 +4,6 @@ This repository contains the code for the paper "FactGraph: Evaluating Factualit
 
 **FactGraph** is an adapter-based method for assessing factuality that decomposes the document and the summary into structured meaning representations (MR).
 
-Test.
-
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
