@@ -1,11 +1,6 @@
-## My Project
+## FactGraph: Evaluating Factuality in Summarization with Semantic Graph Representations (NAACL 2022)
 
-TODO: Fill this README out!
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
 
 ## Security
 
