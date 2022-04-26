@@ -1,6 +1,10 @@
 ## FactGraph: Evaluating Factuality in Summarization with Semantic Graph Representations (NAACL 2022)
 
+This repository contains the code for the paper "FactGraph: Evaluating Factuality in Summarization with Semantic Graph Representations". 
 
+**FactGraph** is an adapter-based method for assessing factuality that decomposes the document and the summary into structured meaning representations (MR).
+
+Test.
 
 ## Security
 
