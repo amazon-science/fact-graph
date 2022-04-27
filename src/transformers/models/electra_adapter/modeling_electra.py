@@ -370,11 +370,10 @@ class T5DenseReluDense(nn.Module):
         return h
 
 
-class LayerAdapt(nn.Module):
+class T5LayerAdapt(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.DenseReluDense = T5DenseReluDense(config)
-        #self.layer_norm = T5LayerNorm(config.d_model, eps=config.layer_norm_eps)
         self.layer_norm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
@@ -648,8 +647,7 @@ class RGCNConv(MessagePassing):
                                                      self.num_relations)
 
 from torch_sparse import SparseTensor
-
-class GNNAdapt(nn.Module):
+class T5GNNAdapt(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.conv = RGCNConv(config.hidden_size, config.intermediate_size, num_relations=2, root_weight=True)
@@ -662,11 +660,9 @@ class GNNAdapt(nn.Module):
     def forward(self, hidden_states, graphs):
         norm_x = self.layer_norm(hidden_states)
         bz, seq, _ = hidden_states.size()
-
         input_gnn = norm_x.view((bz * seq, -1))
 
         adj = SparseTensor(row=graphs.edge_index[0], col=graphs.edge_index[1], value=graphs.y, sparse_sizes=(bz * seq, bz * seq))
-
         y = F.elu(self.conv(input_gnn, adj.t()))
         y = self.dropout_gnn(y)
         y = self.wo(y)
@@ -694,11 +690,11 @@ class ElectraLayer(nn.Module):
         config_adapters = copy.deepcopy(config)
         config_adapters.intermediate_size = config.adapter_size
 
-        self.adapter_graph_bottom = LayerAdapt(config_adapters)
-        self.adapter_bottom = LayerAdapt(config_adapters)
+        self.adapter_graph_bottom = T5LayerAdapt(config_adapters)
+        self.adapter_bottom = T5LayerAdapt(config_adapters)
 
-        self.adapter = LayerAdapt(config_adapters)
-        self.adapter_graph = GNNAdapt(config_adapters)
+        self.adapter = T5LayerAdapt(config_adapters)
+        self.adapter_graph = T5GNNAdapt(config_adapters)
 
     def forward(
         self,

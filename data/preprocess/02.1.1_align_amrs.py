@@ -69,7 +69,7 @@ def align_amr(amr_data):
         # sent_nlp = nlp(sent)
         # tokens = [token.text for token in sent_nlp]
         # tokens = ' '.join(tokens)
-        #tokens = tokens.lower()
+        # tokens = tokens.lower()
 
         tokens = sent
         sents = [tokens]

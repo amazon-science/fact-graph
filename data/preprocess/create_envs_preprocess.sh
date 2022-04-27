@@ -18,6 +18,7 @@ mkdir build
 cd build
 cmake ..
 make
+cd ../../
 
 conda deactivate
 

@@ -44,8 +44,6 @@ for idx, d in enumerate(tqdm(cnndm)):
 sents = []
 ids_docs = []
 for sent in docs.keys():
-    # print(len(docs[sent]))
-    # exit()
     sents.append(sent)
     id_line = set()
     for id_, idx in docs[sent]:

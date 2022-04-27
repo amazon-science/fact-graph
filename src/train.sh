@@ -10,7 +10,7 @@ export MODEL_NAME=google/electra-base-discriminator
 export OMP_NUM_THREADS=3
 
 NAME_EXECUTION=$MODEL_NAME-$RANDOM
-PATH_MODEL=checkpoints/${NAME_EXECUTION}
+PATH_MODEL=../checkpoints/${NAME_EXECUTION}
 PRE_MODEL_GRAPH_ADAPT=../checkpoints/graph_adapters.bin
 PRE_MODEL_TEXT_ADAPT=../checkpoints/text_adapters.bin
 rm -rf ${PATH_MODEL}

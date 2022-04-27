@@ -8,6 +8,7 @@ export OMP_NUM_THREADS=3
 PATH_MODEL=$1
 FILE_VAL='../data/processed_dataset_edge_level/test-sents-amr.json'
 
+
 python -u main_edgelevel.py --test --model_name_or_path ${MODEL_NAME} \
 --test_data_file ${FILE_VAL} \
 --batch_size 8 \

@@ -47,7 +47,6 @@ if [ "${AMR_PARSER}" = "spring" ]; then
   FOLDER_SPRING=spring
   PATH_MODEL=${FOLDER_SPRING}/AMR3.parsing.pt
 
-
   FILE_VAL=${FOLDER}/train-sents.txt
   python -u ${FOLDER_SPRING}/bin/predict_amrs_from_plaintext.py --checkpoint ${PATH_MODEL} --texts ${FILE_VAL} --penman-linearization \
     --use-pointer-tokens > ${FILE_VAL}.amr

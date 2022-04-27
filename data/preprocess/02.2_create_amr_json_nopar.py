@@ -111,25 +111,6 @@ for amr in amr_data:
     dict_amr_data[amr.metadata['snt']] = amr
     total += 1
 
-# doc_data_ids = amr_file.replace(".sents.amr", ".idx_sents")
-# doc_data_sents_ids = amr_file.replace(".amr", "")
-#
-# map_sent_to_docs = {}
-# for idx, (line1, line2) in enumerate(zip(open(doc_data_ids, 'r').readlines(),
-#                                          open(doc_data_sents_ids, 'r').readlines())):
-#     line = line1.strip().split()
-#     sent = line2 = " ".join(line2.split())
-#     if sent not in map_sent_to_docs:
-#         map_sent_to_docs[sent] = []
-#     for r in line:
-#         r = r.split('-')
-#         doc_id = r[0]
-#         idx_sent = int(r[-1])
-#         map_sent_to_docs[sent].append((doc_id, idx_sent, sent))
-#
-# import pdb
-# pdb.set_trace()
-
 error_log = 0
 error_log_claim = 0
 error_log_g = 0
@@ -168,14 +149,8 @@ for d in tqdm(data):
     for k, v in best_sents.items():
         best_sents_list.append(v)
 
-    # import pdb
-    # pdb.set_trace()
-
-    #del(d['sentences'])
-
     for s in best_sents_list:
         s = " ".join(s.split())
-        #s = s.strip()
         if s not in dict_amr_data:
             error_log += 1
             print("sent skipped", error_log)
@@ -186,23 +161,17 @@ for d in tqdm(data):
             graph_simple, triples = simplify_amr_nopar(graph)
 
             graph_dict = {}
-            #graph_dict['amr'] = graph
             graph_simple = ' '.join(graph_simple)
             graph_dict['amr_simple'] = graph_simple
             graph_dict['triples'] = json.dumps(triples)
 
             amr_graphs.append(graph_dict)
 
-            # if len(amr_graphs) == number_graphs:
-            #     break
         except:
             error_log_g += 1
             print("graph sent skipped", error_log_g)
             pass
     d['graphs'] = amr_graphs
-    # import pdb
-    # pdb.set_trace()
-
 
 
 print("skipped graph sents", error_log_g)
