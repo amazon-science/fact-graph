@@ -1,7 +1,7 @@
 datasets==1.8.0
 dill==0.3.4
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
-numpy==1.20.3
+numpy==1.21.0
 packaging==20.9
 pandas==1.2.4
 Penman==1.2.0
