@@ -155,18 +155,6 @@ For predicting, run:
 ./predict_edgelevel.sh <checkpoint_folder> <gpu_id>
 ```
 
-## Trained Model
-
-A **FactGraph** checkpoint trained on **FactCollect** dataset can be found [here](https://public.ukp.informatik.tu-darmstadt.de/ribeiro/factgraph/factgraph.tar.gz). Test set results:
-```
- {'accuracy': 0.89, 'bacc': 0.8904, 'f1': 0.89, 'size': 600, 'cnndm': {'bacc': 0.7717, 'f1': 0.8649, 'size': 370}, 'xsum': {'bacc': 0.6833, 'f1': 0.9304, 'size': 230}}
-```
-
-A **FactGraph-edge** checkpoint trained on the **Maynez** dataset can be found [here](https://public.ukp.informatik.tu-darmstadt.de/ribeiro/factgraph/factgraph-edge.tar.gz). This checkpoint was selected using the test set. Test set results:
-```
- {'accuracy': 0.8371, 'bacc': 0.8447, 'f1': 0.8371, 'f1_macro': 0.7362, 'accuracy_edge': 0.7465, 'bacc_edge': 0.7872, 'f1_edge': 0.7465}
-```
-
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
