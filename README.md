@@ -126,35 +126,6 @@ For predicting, run:
 ./predict.sh <checkpoint_folder> <gpu_id>
 ```
 
-# Training FactGraph - Edge-level
-
-## Preprocess
-
-Download the files *train.tsv* and *test.tsv* from this [link](https://drive.google.com/drive/folders/1BxUVnc7ov9PL7nxP7sS9ZUXCYo877Bcx?usp=sharing). Copy those files to `data\edge_level_data`
-
-Convert the dataset into the format required for the model:
-
-```
-cd data/preprocess
-./process_dataset_for_edge_model.sh <gpu_id>
-cd ../../
-```
-
-## Training
-
-For training **FactGraph** using the **FactCollect** dataset, execute:
-```
-conda activate factgraph
-./train_edgelevel.sh <gpu_id>
-```
-
-## Predicting
-
-For predicting, run:
-```
-./predict_edgelevel.sh <checkpoint_folder> <gpu_id>
-```
-
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
