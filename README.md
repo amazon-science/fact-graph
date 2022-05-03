@@ -78,12 +78,6 @@ cd ../../
 
 This step generated AMR graphs using the [SPRING model](https://github.com/SapienzaNLP/spring). Check their [repository](https://github.com/SapienzaNLP/spring) for more details.
 
-Download the pretrained parameters of the adapters:
-```
-cd src
-./download_pretrained_adapters.sh
-```
-
 ## Training
 
 For training **FactGraph** using the **FactCollect** dataset, execute:
