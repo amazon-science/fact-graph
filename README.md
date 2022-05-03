@@ -64,33 +64,6 @@ cd data
 cd ..
 ```
 
-
-# Running trained FactGraph Models
-
-First, download **FactGraph** trained checkpoints:
-```
-cd src
-./download_trained_models.sh
-```
-
-To run **FactGraph**:
-```
-./evaluate.sh factgraph <file> <gpu_id>
-```
-
-To run **FactGraph** edge-level:
-```
-./evaluate.sh factgraph-edge <file> <gpu_id>
-```
-
-`<file>` is a JSON line file with the following format: 
-```
-{'summary': summary1, 'article': article1}
-{'summary': summary2, 'article': article2}
-...
-```
-where `'summary'` is a single sentence summary.
-
 # Training FactGraph
 
 ## Preprocess
