@@ -57,7 +57,7 @@ FactCollect is created consolidating the following datasets:
 
 * FactCollect uses two datasets released under licenses.
   * FactCC is under [BSD-3](https://github.com/amazon-research/fact-graph/blob/main/data/LICENSE-FACTCC.txt). Copyright (c) 2019, Salesforce.com, Inc. All rights reserved.
-  * XSum Hallucinations is under [CC BY 4.0](https://github.com/amazon-research/fact-graph/blob/main/data/LICENSE-XSUM-HAL.txt)
+  * XSum Hallucinations is under [CC BY 4.0](https://github.com/amazon-research/fact-graph/blob/main/data/LICENSE-XSUM-HAL.txt).
 
 For generating **FactCollect** dataset, execute:
 
