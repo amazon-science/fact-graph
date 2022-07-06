@@ -55,6 +55,10 @@ FactCollect is created consolidating the following datasets:
 | [Maynez et al. (2020)](https://aclanthology.org/2020.acl-main.173.pdf) |   2500  | [Link](https://github.com/google-research-datasets/xsum_hallucination_annotations)
 | [Pagnoni et al. (2021)](https://aclanthology.org/2021.naacl-main.383.pdf) |  4942 | [Link](https://github.com/artidoro/frank/tree/main/data)
 
+* FactCollect uses two datasets released under licenses.
+  * FactCC is under [BSD-3](https://github.com/amazon-research/fact-graph/blob/main/data/LICENSE-FACTCC.txt). Copyright (c) 2019, Salesforce.com, Inc. All rights reserved.
+  * XSum Hallucinations is under [CC BY 4.0](https://github.com/amazon-research/fact-graph/blob/main/data/LICENSE-XSUM-HAL.txt)
+
 For generating **FactCollect** dataset, execute:
 
 ```
@@ -122,6 +126,9 @@ For predicting, run:
 ./predict_edgelevel.sh <checkpoint_folder> <gpu_id>
 ```
 
+## Trained Model
+
+We are going to release trained models soon.
 
 ## Security
 
