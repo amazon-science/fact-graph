@@ -68,6 +68,32 @@ cd data
 cd ..
 ```
 
+# Running trained FactGraph Models
+
+First, download **FactGraph** trained checkpoints:
+```
+cd src
+./download_trained_models.sh
+```
+
+To run **FactGraph**:
+```
+./evaluate.sh factgraph <file> <gpu_id>
+```
+
+To run **FactGraph** edge-level:
+```
+./evaluate.sh factgraph-edge <file> <gpu_id>
+```
+
+`<file>` is a JSON line file with the following format: 
+```
+{'summary': summary1, 'article': article1}
+{'summary': summary2, 'article': article2}
+...
+```
+where `'summary'` is a single sentence summary.
+
 # Training FactGraph
 
 ## Preprocess
@@ -81,6 +107,12 @@ cd ../../
 ```
 
 This step generated AMR graphs using the [SPRING model](https://github.com/SapienzaNLP/spring). Check their [repository](https://github.com/SapienzaNLP/spring) for more details.
+
+Download the pretrained parameters of the adapters:
+```
+cd src
+./download_pretrained_adapters.sh
+```
 
 ## Training
 
@@ -126,9 +158,17 @@ For predicting, run:
 ./predict_edgelevel.sh <checkpoint_folder> <gpu_id>
 ```
 
-## Trained Model
+## Trained Models
 
-We are going to release trained models soon.
+A **FactGraph** checkpoint trained on **FactCollect** dataset can be found [here](https://public.ukp.informatik.tu-darmstadt.de/ribeiro/factgraph/factgraph.tar.gz). Test set results:
+```
+ {'accuracy': 0.89, 'bacc': 0.8904, 'f1': 0.89, 'size': 600, 'cnndm': {'bacc': 0.7717, 'f1': 0.8649, 'size': 370}, 'xsum': {'bacc': 0.6833, 'f1': 0.9304, 'size': 230}}
+```
+
+A **FactGraph-edge** checkpoint trained on the **Maynez** dataset can be found [here](https://public.ukp.informatik.tu-darmstadt.de/ribeiro/factgraph/factgraph-edge.tar.gz). This checkpoint was selected using the test set. Test set results:
+```
+ {'accuracy': 0.8371, 'bacc': 0.8447, 'f1': 0.8371, 'f1_macro': 0.7362, 'accuracy_edge': 0.6948, 'bacc_edge': 0.6592, 'f1_edge': 0.6948}
+```
 
 ## Security
 
