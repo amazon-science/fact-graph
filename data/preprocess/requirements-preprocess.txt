@@ -17,7 +17,7 @@ python-dateutil==2.8.1
 pytz==2021.1
 requests==2.25.1
 s3transfer==0.4.2
-scipy==1.5.2
+scipy==1.10.0
 six==1.16.0
 smatch==1.0.4
 spacy==3.0.6
