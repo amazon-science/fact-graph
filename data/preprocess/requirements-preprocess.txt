@@ -22,7 +22,7 @@ six==1.16.0
 smatch==1.0.4
 spacy==3.0.6
 stanza==1.2
-torch==1.9.0
+torch==1.13.1
 sentence-transformers==1.2.0
 unidecode==1.2.0
 amrlib==0.7.1
